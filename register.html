@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>注册</title>
+    
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <link rel="stylesheet" href="../css/bootstrap-theme.css">
+    <link rel="stylesheet" href="../css/register.css">
+    <script src="../js/jquery-3.3.1.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../js/bootstrap.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../js/register.js" type="text/javascript" charset="utf-8"></script>
+</head>
+<style>
+        input::-webkit-input-placeholder{
+            color:black;
+        }
+        input::-moz-placeholder{   /* Mozilla Firefox 19+ */
+            color:black;
+        }
+        input:-moz-placeholder{    /* Mozilla Firefox 4 to 18 */
+            color:black;
+        }
+        input:-ms-input-placeholder{  /* Internet Explorer 10-11 */ 
+            color:black;
+        }
+        
+        .fileinput-button {
+            position: relative;
+            display: inline-block;
+            overflow: hidden;
+        }
+        .fileinput-button input{
+            position:absolute;
+            right: 0px;
+            top: 0px;
+            opacity: 0;
+            -ms-filter: 'alpha(opacity=0)';
+            font-size: 200px;
+        }
+</style>
+<body>
+    <div class="wp">
+		<div class="head">博客注册</div>
+		<form id="zhucheform" method="post" enctype="multipart/form-data">
+            <div align="center" style="margin-top:20px">
+            	<span class="btn btn-default fileinput-button">
+            		<span>上传头像</span>
+					<input type="file" accept="image/jpeg" id="photo"  name="photo"  placeholder="头像" onchange="changepic(this)" onfocus="TXonfocu()" onblur="TXonblus()"/>
+				</span>
+				<img src="" id="show" width="100">
+				<span id="TXerror"></span>
+      		</div>
+			<div>
+				<input class="user-txt" type="text" id="username" placeholder="昵称" onfocus="YHMonfocu()" onblur="YHMonblus()" />
+				<span id="YHMerror"></span>
+      		</div>
+      		<div>
+      			<input class="user-txt" type="text" id="phone" placeholder="手机号码" onfocus="LXDHonfocu()" onblur="LXDHonblus()"/>
+      			<span id="LXDHerror"></span>
+      		</div>
+      		<div>
+      			<input class="user-txt" type="password" id="password" placeholder="密码" onfocus="MMonfocu()" onblur="MMonblus()"/>
+      			<span id="MMerror"></span>
+      		</div>
+      		<div>
+      			<input class="user-txt" type="password" id="password2" placeholder="确认密码" onfocus="QRMMonfocu()" onblur="QRMMonblus()"/>
+      			<span id="QRMMerror"> </span>
+      		</div>
+			<select class="user-txt" id="sex">
+				<option value="1" selected>男</option>
+				<option value="0">女</option>
+			</select>
+			<div class="birthday">
+				<div class="datebox">
+					<input type="text" id="birth" readonly="readonly" placeholder="生日"/>
+					<input type="date" class="mydate" onchange="aaa(this)"/>
+				</div>
+			</div>
+			<script type="text/javascript">
+		    
+ 			function aaa(obj){
+		  		document.getElementById('birth').value = obj.value;       
+			} 
+			</script>
+	</form>
+		<div class="user-info">
+			<div class="info-right">
+				<div class="denglu">
+					<a href="../html/login.html">已有账号？立即登录</a>
+				</div>
+				<div class="clear"></div>
+			</div>
+			<div class="clear"></div>
+		</div>
+		<button class="submit" onclick="zhuce()">提交注册</button>
+	</div>    
+</body>
+</html>
